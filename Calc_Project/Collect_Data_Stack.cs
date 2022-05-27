@@ -12,30 +12,28 @@ namespace Calc_Project
         {
         }
 
-        public void AddToStack(long DataFromCalc)
+        public void AddToStack(double DataFromCalc)
         {
+            if (DataFromCalc!=02)
             myStack.Push(DataFromCalc);
             
             PrintValuesFromStack(myStack);
         }
 
-
-
-
-        public void TakeDataFromStack(ref long stack)
+        public void TakeDataFromStack(ref double stack)
         {
-            stack = (long)myStack.Peek();
+            stack = (double)myStack.Peek();
             myStack.Pop();
             PrintValuesFromStack(myStack);
         }
 
-        public void TakeDataFromReverseStack(ref long stack)
+        public void TakeDataFromReverseStack(ref double stack)
         {
             while (myStack.Count != 0)
             {
                 revStack.Push(myStack.Pop());
             }
-            stack = (long)revStack.Peek();
+            stack = (double)revStack.Peek();
             revStack.Pop();
             PrintValuesFromStack(myStack);
 

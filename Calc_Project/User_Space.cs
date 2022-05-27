@@ -17,16 +17,19 @@ namespace Calc_Project
             {
                 if (line.Contains(command, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"Method called{command}");
+                    Console.WriteLine($"Method called: {command}");
+                    
                     string tmp = line.Replace(command, "").Trim();
+                    
+                    Console.WriteLine(tmp);
                     string[] subs = tmp.Split(' ');
                     foreach (string s in subs)
                     {
-                        long.TryParse(s, out long number);
+                        double.TryParse(s, out double number);
                         Collect_Data_Stack.Instance.AddToStack(number);
                     }
                     
-                    //OnReceivedLine -= Menu_OnReceivedLine;
+                    //OnReceivedLine -= Menu_OnReceivedLine;long
                     callback?.Invoke();
                 }
             }

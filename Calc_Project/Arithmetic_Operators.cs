@@ -5,8 +5,9 @@ namespace Calc_Project
 {
     public class Arithmetic_Operators
     {
-        long OutData = 0;
-        long number = 0;
+        double OutData = 0;
+        double number = 0;
+        bool flaga = true;
         public Arithmetic_Operators()
         {
 
@@ -61,9 +62,9 @@ namespace Calc_Project
             ; for (int i = 1; i < j; i++)
             {
                 Collect_Data_Stack.Instance.TakeDataFromReverseStack(ref number);
-                Console.WriteLine($"Number {number}");
+                
                 OutData /= number;
-                Console.WriteLine($"Output in for {OutData}");
+               
             }
             Console.WriteLine($"OutData {OutData}");
             Collect_Data_Stack.Instance.AddToStack(OutData);
@@ -73,6 +74,7 @@ namespace Calc_Project
         {
             Collect_Data_Stack.Instance.ClearTheStock();
             Console.WriteLine("Clear the stack");
+            
         }
         public void BooleanNOT()
         {
@@ -80,15 +82,38 @@ namespace Calc_Project
         }
         public void NotEqualTo()
         {
+            int j = Collect_Data_Stack.Instance.myStack.Count;
+            Collect_Data_Stack.Instance.TakeDataFromReverseStack(ref number);
+            double tmp = number;
+            ; for (int i = 1; i < j; i++)
+            {
+                Collect_Data_Stack.Instance.TakeDataFromReverseStack(ref number);
 
+                if(tmp != number)
+                {
+                    OutData = 1;
+                }
+                else
+                {
+                    OutData = 0;
+                }
+
+            }
+            Console.WriteLine($"OutData {OutData}");
+            Collect_Data_Stack.Instance.AddToStack(OutData);
+            OutData = 0;
         }
         public void Modulus()
         {
             int j = Collect_Data_Stack.Instance.myStack.Count;
-            for (int i = 0; i < j; i++)
+            Collect_Data_Stack.Instance.TakeDataFromReverseStack(ref number);
+            OutData = number;
+            ; for (int i = 1; i < j; i++)
             {
-                Collect_Data_Stack.Instance.TakeDataFromStack(ref number);
+                Collect_Data_Stack.Instance.TakeDataFromReverseStack(ref number);
+
                 OutData %= number;
+
             }
             Console.WriteLine($"OutData {OutData}");
             Collect_Data_Stack.Instance.AddToStack(OutData);
@@ -96,27 +121,11 @@ namespace Calc_Project
         }
         public void Increment()
         {
-            int j = Collect_Data_Stack.Instance.myStack.Count;
-            for (int i = 0; i < j; i++)
-            {
-                Collect_Data_Stack.Instance.TakeDataFromStack(ref number);
-                OutData = number++;
-            }
-            Console.WriteLine($"OutData {OutData}");
-            Collect_Data_Stack.Instance.AddToStack(OutData);
-            OutData = 0;
+           
         }
         public void Decrement()
         {
-            int j = Collect_Data_Stack.Instance.myStack.Count;
-            for (int i = 0; i < j; i++)
-            {
-                Collect_Data_Stack.Instance.TakeDataFromStack(ref number);
-                OutData = number--;
-            }
-            Console.WriteLine($"OutData {OutData}");
-            Collect_Data_Stack.Instance.AddToStack(OutData);
-            OutData = 0;
+           
         }
 
     }

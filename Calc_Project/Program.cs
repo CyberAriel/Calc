@@ -16,9 +16,10 @@ namespace Calc_Project
             Bitwise_Operators bitwise_Operators = new Bitwise_Operators();
             Numeric_Utilities numeric_Utilities = new Numeric_Utilities();
             Constants constants = new Constants();
+            Trigonometric_Functions trigonometric_Functions = new Trigonometric_Functions();
             var task = user_Space.ConsoleInputAsync(cancellationToken);
 
-
+            user_Space.ExecuteWhenCommandAppears("clear console", () => Console.Clear());
             user_Space.ExecuteWhenCommandAppears("+", () => arithmetic_Operators.Add());
             user_Space.ExecuteWhenCommandAppears("-", () => arithmetic_Operators.Subtract());
             user_Space.ExecuteWhenCommandAppears("*", () => arithmetic_Operators.Multiply());
@@ -29,6 +30,15 @@ namespace Calc_Project
             user_Space.ExecuteWhenCommandAppears("%", () => arithmetic_Operators.Modulus());
             user_Space.ExecuteWhenCommandAppears("++", () => arithmetic_Operators.Increment());
             user_Space.ExecuteWhenCommandAppears("--", () => arithmetic_Operators.Decrement());
+
+            user_Space.ExecuteWhenCommandAppears("e", () => constants.PushE());
+            user_Space.ExecuteWhenCommandAppears("pi", () => constants.PushPi());
+            user_Space.ExecuteWhenCommandAppears("rand", () => constants.GenerateARandomNumber());
+
+            user_Space.ExecuteWhenCommandAppears("sin", () => trigonometric_Functions.Sine());
+            user_Space.ExecuteWhenCommandAppears("cos", () => trigonometric_Functions.Cosine());
+
+
 
             // user_Space.ExecuteWhenCommandAppears("exit", () =>
             //  {
