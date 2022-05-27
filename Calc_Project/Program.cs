@@ -17,6 +17,7 @@ namespace Calc_Project
             Numeric_Utilities numeric_Utilities = new Numeric_Utilities();
             Constants constants = new Constants();
             Trigonometric_Functions trigonometric_Functions = new Trigonometric_Functions();
+            Mathematic_Functions mathematic_Functions = new Mathematic_Functions();
             var task = user_Space.ConsoleInputAsync(cancellationToken);
 
             user_Space.ExecuteWhenCommandAppears("clear console", () => Console.Clear());
@@ -37,6 +38,8 @@ namespace Calc_Project
 
             user_Space.ExecuteWhenCommandAppears("sin", () => trigonometric_Functions.Sine());
             user_Space.ExecuteWhenCommandAppears("cos", () => trigonometric_Functions.Cosine());
+
+            user_Space.ExecuteWhenCommandAppears("fact", () => mathematic_Functions.Fact());
 
 
 

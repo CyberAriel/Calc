@@ -121,7 +121,13 @@ namespace Calc_Project
         }
         public void Increment()
         {
-           
+            /*
+            Collect_Data_Stack.Instance.TakeDataFromStack(ref number);
+            number++;
+            OutData = number;
+            Collect_Data_Stack.Instance.AddToStack(OutData);
+            Console.WriteLine($"OutData {OutData}");
+            */
         }
         public void Decrement()
         {
