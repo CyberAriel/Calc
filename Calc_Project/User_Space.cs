@@ -17,7 +17,7 @@ namespace Calc_Project
             {
                 if (line.Contains(command, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"String zawiera{command}");
+                    Console.WriteLine($"Method called{command}");
                     string tmp = line.Replace(command, "").Trim();
                     string[] subs = tmp.Split(' ');
                     foreach (string s in subs)

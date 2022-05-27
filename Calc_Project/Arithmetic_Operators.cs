@@ -3,32 +3,28 @@ using System.Collections;
 
 namespace Calc_Project
 {
-	public class Arithmetic_Operators
-	{
+    public class Arithmetic_Operators
+    {
         long OutData = 0;
-		public Arithmetic_Operators()
-		{
-            
-		}
-		public void Add()
+        public Arithmetic_Operators()
         {
 
-            long[] arr = new long[10];
-             Stack stack = new Stack();
-       Collect_Data_Stack.Instance.TakeDataFromStack(ref arr);
-            
-            foreach (long l in arr)
+        }
+        public void Add()
+        {
+            long number = 0;
+
+            int j = Collect_Data_Stack.Instance.myStack.Count;
+
+            for (int i = 0; i < j; i++)
             {
-                OutData += l;
+                Collect_Data_Stack.Instance.TakeDataFromStack(ref number);
+                OutData += number;
+
             }
-
             Console.WriteLine($"OutData {OutData}");
-            
-
-
-
             Collect_Data_Stack.Instance.AddToStack(OutData);
-
+            OutData = 0;
         }
 
 
@@ -36,19 +32,20 @@ namespace Calc_Project
         {
 
         }
-		public void Multiply()
+        public void Multiply()
         {
 
         }
-		public void Divide()
+        public void Divide()
         {
 
         }
-		public void ClearTheStack()
+        public void ClearTheStack()
         {
-
+            Collect_Data_Stack.Instance.ClearTheStock();
+            Console.WriteLine("Clear the stack");
         }
-		public void BooleanNOT()
+        public void BooleanNOT()
         {
 
         }

@@ -20,7 +20,7 @@ namespace Calc_Project
 
 
             user_Space.ExecuteWhenCommandAppears("+", () => arithmetic_Operators.Add());
-           // user_Space.ExecuteWhenCommandAppears("-", () => Console.WriteLine("test"));
+            user_Space.ExecuteWhenCommandAppears("clr", () => arithmetic_Operators.ClearTheStack());
             //user_Space.ExecuteWhenCommandAppears("*", () => Console.WriteLine("test"));
            // user_Space.ExecuteWhenCommandAppears("/", () => Console.WriteLine("test"));
            // user_Space.ExecuteWhenCommandAppears("clr", () => Console.WriteLine("test"));
