@@ -6,6 +6,7 @@ namespace Calc_Project
     {
         public static Collect_Data_Stack Instance = new Collect_Data_Stack();
         public Stack myStack = new Stack();
+        public Stack revStack = new Stack();
 
         public Collect_Data_Stack()
         {
@@ -14,9 +15,12 @@ namespace Calc_Project
         public void AddToStack(long DataFromCalc)
         {
             myStack.Push(DataFromCalc);
-
+            
             PrintValuesFromStack(myStack);
         }
+
+
+
 
         public void TakeDataFromStack(ref long stack)
         {
@@ -25,6 +29,17 @@ namespace Calc_Project
             PrintValuesFromStack(myStack);
         }
 
+        public void TakeDataFromReverseStack(ref long stack)
+        {
+            while (myStack.Count != 0)
+            {
+                revStack.Push(myStack.Pop());
+            }
+            stack = (long)revStack.Peek();
+            revStack.Pop();
+            PrintValuesFromStack(myStack);
+
+        }
 
         public void ClearTheStock()
         {
@@ -41,6 +56,7 @@ namespace Calc_Project
             }
             Console.WriteLine();
         }
+
     }
 }
 

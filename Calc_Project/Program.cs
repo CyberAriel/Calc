@@ -20,21 +20,21 @@ namespace Calc_Project
 
 
             user_Space.ExecuteWhenCommandAppears("+", () => arithmetic_Operators.Add());
+            user_Space.ExecuteWhenCommandAppears("-", () => arithmetic_Operators.Subtract());
+            user_Space.ExecuteWhenCommandAppears("*", () => arithmetic_Operators.Multiply());
+            user_Space.ExecuteWhenCommandAppears("/", () => arithmetic_Operators.Divide());
             user_Space.ExecuteWhenCommandAppears("clr", () => arithmetic_Operators.ClearTheStack());
-            //user_Space.ExecuteWhenCommandAppears("*", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("/", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("clr", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("!", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("!=", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("%", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("++", () => Console.WriteLine("test"));
-           // user_Space.ExecuteWhenCommandAppears("--", () => Console.WriteLine("test"));
+            user_Space.ExecuteWhenCommandAppears("!", () => arithmetic_Operators.BooleanNOT());
+            user_Space.ExecuteWhenCommandAppears("!=", () => arithmetic_Operators.NotEqualTo());
+            user_Space.ExecuteWhenCommandAppears("%", () => arithmetic_Operators.Modulus());
+            user_Space.ExecuteWhenCommandAppears("++", () => arithmetic_Operators.Increment());
+            user_Space.ExecuteWhenCommandAppears("--", () => arithmetic_Operators.Decrement());
 
-           // user_Space.ExecuteWhenCommandAppears("exit", () =>
-          //  {
-         //       cancellationToken.Cancel();
-                
-          //  });
+            // user_Space.ExecuteWhenCommandAppears("exit", () =>
+            //  {
+            //       cancellationToken.Cancel();
+
+            //  });
             await task;
             Console.WriteLine("End of application");
         }
